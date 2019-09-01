@@ -21,11 +21,12 @@
 title: Garrett's Blog
 email: garrett.church.820@my.csun.edu
 description: >- # this means to ignore newlines until "baseurl:"
-  This blog is to allow you insight into my progress for not only my senior design class, but personal projects along the way.
+  This blog will allow insight into my progress for not only my senior design class, but personal projects along the way.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
+#twitter_username: jekyllrb
 github_username:  GarrettC777
+instagram_username: garrett.jpg
 
 # Build settings
 theme: minima
