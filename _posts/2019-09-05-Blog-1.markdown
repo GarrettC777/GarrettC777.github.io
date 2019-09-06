@@ -5,11 +5,27 @@ date:   2019-09-05 20:59:34 -0700
 categories: jekyll update
 ---
  
- Docker is a tool that allows you to create and run applications using containers. Containers are much more lightweight than using a 
+Docker is a tool that allows you to create and run applications using containers. Containers are much more lightweight than using a 
 full virtual machine to run the entire operating system, because instead of the entire operating system being installed for your application to run, 
 containers just use the binaries related to running the instance of your application to create a more lightweight 
 and scallable version of your application.  Now that we've covered the basics, I'll start off by saying that I have very little prior experience with Docker.
 
-Aside from watching Redhat's Kubernetes and Docker tonline tutorials and seeing docker seminars at a few conventions, I haven't really gotten my hands
-on it until this lab.  Granted this lab is for first year cit160 students and CSUN and we were supposed to test out the feasability of it, I still knew I'd come out
-of this learning a great deal of the basics knowing I hadn't worked with docker before.
+Aside from watching Redhat's Kubernetes and Docker online tutorials and seeing docker seminars at a few conventions, I haven't really gotten my hands
+on it until this lab.  Granted this lab is for first year cit160 students at CSUN and we were supposed to test out the feasability of it, I still knew I'd come out
+of this learning a great deal of the basics knowing I hadn't worked with docker before.  
+
+This lab started off with getting me familiar with some basic docker commands such as "docker -ps -a" which allows me to see the container status of
+all containers even when exited, as well as "docker pull", "docker --version", and docker run commands.  While it was certainly nice to get a grasp on
+how to manage containers in docker, this was fairly simple to understand.  There was one hickup during my environment setup for this lab that took a
+little time to figure out.  There was an instance where I had to set up a few directories and populate them with a few files that a script would automate for me.
+The only problem was, it was telling me that access was denied to adding these directories to the computer that my container was mounted to.  
+What I didn't realize was that instead of creating the directory I should have previously created in my home directory, I created it in a different directory.
+
+I looke back where it should have been created and found there was a directory there in the right name, but only root could have privileges.  I changed ownership
+and was allowed to move forward in the lab.  This just goes to show, some things need to be taken into more consideration even if they don't seem too important at the time.  If I really needed to use the
+directory I created in a different path, I would've needed to mount the new container access to that different directory.  In this case, it was easier to just 
+change the ownership of the original directory location that was still created anyhow.
+
+All in all, the problem with the directory access lead me to have a greater understanding of internal mounting points with containers and I'm 
+confident that I will be able to spin up containers knowing alot more about the different characteristics with their configurations.
+
