@@ -21,7 +21,7 @@ little time to figure out.  There was an instance where I had to set up a few di
 The only problem was, it was telling me that access was denied to adding these directories to the computer that my container was mounted to.  
 What I didn't realize was that instead of creating the directory I should have previously created in my home directory, I created it in a different directory.
 
-I looke back where it should have been created and found there was a directory there in the right name, but only root could have privileges.  I changed ownership
+I looked back where it should have been created and found there was a directory there in the right name, but only root could have privileges.  I changed ownership
 and was allowed to move forward in the lab.  This just goes to show, some things need to be taken into more consideration even if they don't seem too important at the time.  If I really needed to use the
 directory I created in a different path, I would've needed to mount the new container access to that different directory.  In this case, it was easier to just 
 change the ownership of the original directory location that was still created anyhow.
