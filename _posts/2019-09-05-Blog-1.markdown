@@ -4,7 +4,12 @@ title:  "Docker Setup"
 date:   2019-09-05 20:59:34 -0700
 categories: jekyll update
 ---
+ 
+ Docker is a tool that allows you to create and run applications using containers. Containers are much more lightweight than using a 
+full virtual machine to run the entire operating system, because instead of the entire operating system being installed for your application to run, 
+containers just use the binaries related to running the instance of your application to create a more lightweight 
+and scallable version of your application.  Now that we've covered the basics, I'll start off by saying that I have very little prior experience with Docker.
 
-For the sake of getting into the technical aspects of this docker setup, I'll be short with the description.  Docker is a tool that allows you to create and run applications using containers.
-Containers are much more lightweight than using a full virtual machine to run the entire operating system, because instead of the entire operating system being installed, containers just
-use the binaries related to running the instance of your application to create a more lightweight and scallable version of your application.
+Aside from watching Redhat's Kubernetes and Docker tonline tutorials and seeing docker seminars at a few conventions, I haven't really gotten my hands
+on it until this lab.  Granted this lab is for first year cit160 students and CSUN and we were supposed to test out the feasability of it, I still knew I'd come out
+of this learning a great deal of the basics knowing I hadn't worked with docker before.
