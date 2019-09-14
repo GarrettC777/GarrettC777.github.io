@@ -22,4 +22,4 @@ pretty much what I was asking for with this project to begin with.  When I power
 I didn't know what to think about that, but I thought I would just install the drivers later, post-installation and just use my
 bluetooth keyboard.  
 
-This next part is __important __for __people __with __a __proclaimed __bad __ssd 
+This next part is __bold__ important for ssd's that weren't functioning correctly. __bold__
