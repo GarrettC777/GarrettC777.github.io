@@ -22,4 +22,16 @@ pretty much what I was asking for with this project to begin with.  When I power
 I didn't know what to think about that, but I thought I would just install the drivers later, post-installation and just use my
 bluetooth keyboard.  
 
-This next part is __important for ssd's that weren't functioning correctly.__
+This next part is __important for ssd's that weren't functioning correctly.__  I was not able to install Ubuntu the first time
+I tried.  It told me there was an IO Error on the bad drive and I figured that was it for the idea, but I thought I'd reboot and
+instead of trying to install it straight away, I did a disk check with the ubuntu utility.  It found errors and told me to restart.
+When I did so, I was happy to see that it didn't give me an error trying to install this time and in fact did read the correct
+partition size.  I installed Ubuntu and to no surprise, the keyboard did not work still.  So I updated the drivers and reinstalled
+the generic keyboard drivers for Ubuntu using this command.
+
+	sudo apt-get install xserver-xorg-input-all
+	
+This didn't work, and I figured it was a microsoft hardware compatibility issue and Ubuntu didn't have the correct drivers.
+I did a bit of digging and as it turns out, other people have had problems with the keyboard working on their Microsoft
+laptops.  Upon further digging, I found pre-built kernels and headers for many of the Surface family including the
+Microsoft Surface Laptop on a github page [example](https://github.com/jakeday/linux-surface "linux-surface")
