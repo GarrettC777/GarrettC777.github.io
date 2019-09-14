@@ -34,4 +34,13 @@ the generic keyboard drivers for Ubuntu using this command.
 This didn't work, and I figured it was a microsoft hardware compatibility issue and Ubuntu didn't have the correct drivers.
 I did a bit of digging and as it turns out, other people have had problems with the keyboard working on their Microsoft
 laptops.  Upon further digging, I found pre-built kernels and headers for many of the Surface family including the
-Microsoft Surface Laptop on a github page [example](https://github.com/jakeday/linux-surface "linux-surface")
+Microsoft Surface Laptop on this [github page](https://github.com/jakeday/linux-surface "linux-surface").  It does give the
+option to compile from source, but the prebuilt kernel suited me just fine.  I had to install the dependencies, clone the repo for
+the code to install the prebuilt kernel, and simply run it.  The _setup.sh_ script runs the necesary commands to download install the
+needed firmware and Ubuntu version.  Here now from what should've been a dead laptop that is _physically_ unrepairable by any DIY means,
+was able to work with what it had.  
+
+Although I'm happy to say no money was spent in replacing the motherboard that the ssd was soddered onto, I do feel like the problem with SSD
+may persist considering all that's happened.  I'm hoping with the disc check utility I ran, and the Ubuntu OS installed, it will have the bad 
+sectors mapped out and hopefully not create new ones down the line, but anything is possible with this proclaimed dead SSD.  It may be working now,
+but at some point, it did fail.
