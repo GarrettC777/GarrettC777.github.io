@@ -15,4 +15,11 @@ ssd after it would not boot.  He wasn't going to get it replaced, so I thought I
 Microsoft Surface Laptop SSD is pronounced dead, you may want to try this, though Mileage may vary.  Here begins the endevor.
 
 First things first, I flashed a Ubuntu 18.04 Bionic image to a USB.  Next,  I booted the laptop and because the SSD was not being
-read correctly, it booted straight to the UEFI (otherwise click the F6 key a few times while powering on).  
+read correctly, it booted straight to the UEFI (otherwise click the F6 key a few times while powering on).  I then disabled
+SecureBoot which would not allow a bootable usb drive to run Ubuntu or any other 3rd party OS.  Next, I enabled booting from
+a usb.  I powered off the laptop, inserted the usb, and rebooted.  This is where things get a little inconvenient, which is
+pretty much what I was asking for with this project to begin with.  When I powered the laptop on, the keyboard did not work.
+I didn't know what to think about that, but I thought I would just install the drivers later, post-installation and just use my
+bluetooth keyboard.  
+
+This next part is __important __for __people __with __a __proclaimed __bad __ssd 
