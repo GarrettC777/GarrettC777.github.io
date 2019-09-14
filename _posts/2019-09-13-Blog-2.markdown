@@ -8,10 +8,10 @@ categories: jekyll update
 Ubuntu is a widely supported open source debian/linux opperating system that has come a long way and continues
 to be introduced to many with a continuing growing support.  That being said, it still finds trouble with compatibility,
 especially on laptops that were never intended to use the operating system.  Never the less, this article will show you
-that should you want to install Ubuntu on your Microsoft Surfact Laptop, you do have the power to do so.
+that should you want to install Ubuntu on your Microsoft Surface Laptop, you do have the power to do so.
 
-As for a short explanation to this idea, a friend of mine recently had Microsoft tell him that his laptop contained a bad
-ssd after it would not boot.  He wasn't going to get it replaced, so I thought I might try to do what I can.  If your 
+As for a short explanation of this idea, a friend of mine recently had Microsoft tell him that his laptop contained a bad
+ssd after it would not boot.  He wasn't going to get it replaced, so I thought I might try to do what I can for him.  If your 
 Microsoft Surface Laptop SSD is pronounced dead, you may want to try this, though Mileage may vary.  Here begins the endevor.
 
 First things first, I flashed a Ubuntu 18.04 Bionic image to a USB.  Next,  I booted the laptop and because the SSD was not being
@@ -20,11 +20,11 @@ SecureBoot which would not allow a bootable usb drive to run Ubuntu or any other
 a usb.  I powered off the laptop, inserted the usb, and rebooted.  This is where things get a little inconvenient, which is
 pretty much what I was asking for with this project to begin with.  When I powered the laptop on, the keyboard did not work.
 I didn't know what to think about that, but I thought I would just install the drivers later, post-installation and just use my
-bluetooth keyboard.  
+bluetooth keyboard for now.  
 
 This next part is __important for ssd's that weren't functioning correctly.__  I was not able to install Ubuntu the first time
 I tried.  It told me there was an IO Error on the bad drive and I figured that was it for the idea, but I thought I'd reboot and
-instead of trying to install it straight away, I did a disk check with the ubuntu utility.  It found errors and told me to restart.
+instead of trying to install it straight away, I did a disk check with the Ubuntu utility.  It found errors and told me to restart.
 When I did so, I was happy to see that it didn't give me an error trying to install this time and in fact did read the correct
 partition size.  I installed Ubuntu and to no surprise, the keyboard did not work still.  So I updated the drivers and reinstalled
 the generic keyboard drivers for Ubuntu using this command.
@@ -36,11 +36,11 @@ I did a bit of digging and as it turns out, other people have had problems with 
 laptops.  Upon further digging, I found pre-built kernels and headers for many of the Surface family including the
 Microsoft Surface Laptop on this [github page](https://github.com/jakeday/linux-surface "linux-surface").  It does give the
 option to compile from source, but the prebuilt kernel suited me just fine.  I had to install the dependencies, clone the repo for
-the code to install the prebuilt kernel, and simply run it.  The _setup.sh_ script runs the necesary commands to download install the
-needed firmware and Ubuntu version.  Here now from what should've been a dead laptop that is _physically_ unrepairable by any DIY means,
-was able to work with what it had.  
+the code to install the prebuilt kernel, and simply run it.  The _setup.sh_ script runs the necesary commands to download and install the
+needed firmware and Ubuntu version.  Rebooting, I found that the keyboard worked flawlessly.  Here now from what should've been a dead laptop 
+that is _physically_ unrepairable by any DIY means, was able to work with what it had.  
 
 Although I'm happy to say no money was spent in replacing the motherboard that the ssd was soddered onto, I do feel like the problem with SSD
 may persist considering all that's happened.  I'm hoping with the disc check utility I ran, and the Ubuntu OS installed, it will have the bad 
 sectors mapped out and hopefully not create new ones down the line, but anything is possible with this proclaimed dead SSD.  It may be working now,
-but at some point, it did fail.
+but at some point, it did fail.  Thanks for reading.
