@@ -5,3 +5,14 @@ date:   2019-09-13 20:59:34 -0700
 categories: jekyll update
 ---
  
+Ubuntu is a widely supported open source debian/linux opperating system that has come a long way and continues
+to be introduced to many with a continuing growing support.  That being said, it still finds trouble with compatibility,
+especially on laptops that were never intended to use the operating system.  Never the less, this article will show you
+that should you want to install Ubuntu on your Microsoft Surfact Laptop, you do have the power to do so.
+
+As for a short explanation to this idea, a friend of mine recently had Microsoft tell him that his laptop contained a bad
+ssd after it would not boot.  He wasn't going to get it replaced, so I thought I might try to do what I can.  If your 
+Microsoft Surface Laptop SSD is pronounced dead, you may want to try this, though Mileage may vary.  Here begins the endevor.
+
+First things first, I flashed a Ubuntu 18.04 Bionic image to a USB.  Next,  I booted the laptop and because the SSD was not being
+read correctly, it booted straight to the UEFI (otherwise click the F6 key a few times while powering on).  
