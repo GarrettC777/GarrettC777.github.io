@@ -27,6 +27,9 @@ So let's break down this task into each paramater.
 - **name:** A human readable name of the task that is going to be carried out on the host computers.  It makes it easier for other people to see what you're accomplishing with the task.
 - **lineinfile:** The declaration of the module we're going to use to carry out the task, in this case, look into a file at a specific line.
 - **dest:** The file that we're going to be accessing, in this case, the "sudoers" file in the "/etc" folder.
-- **insertafter:**  The line to look for, in this case "^%admins" and might I add, this is the part that I got stuck with.  the **^** symbol **must** be in there for this parameter and originally I had thought that there was a line in the file with that symbol in it.  This line also specifies to insert the new text on the next line.
+- **insertafter:**  The line to look for, in this case "^%admins" and might I add, this is the part that I got stuck with.  The **^** symbol **must** be in there for this parameter and originally I had thought that there was a line in the file with that symbol in it.  This line also specifies to insert the new text on the next line.
 - **line:** The line to insert into the file, in this case "%cit480 ALL=(ALL) NOPASSWD: /usr/sbin/traceroute".
 - **validate:** This command will define how to validate the file before actually modifying the file.  In this case beign modified with visudo and the full path to the command must be specified.
+
+This is just one example of ways to input lines into files and there may be some other ways you need to do so.  In that case, The Ansible Documentation is very beneficial to read and they even have more information on their website.  This post is to clarify things that may not be apparant in 
+the documentation.  I hope I cleared some things up for people, and if not, click [here](https://docs.ansible.com/ansible/latest/modules/lineinfile_module.html) for the documentation on the *lineinfile* module.  Thanks for reading!
