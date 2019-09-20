@@ -15,10 +15,10 @@ The module that carries out the task of copying, modifying, or removing text in 
 in particular that are very simple to get started with and can be uses to do the job, such as *insertafter*, *line*, *mode*, *regexp*.  Here is an example we can break down
 to show how the *lineinfile* module can carry out it's modifications to a file using the a YML playbook file.
 
-'''
+```
 
 
 text
 
-'''
+```
 
