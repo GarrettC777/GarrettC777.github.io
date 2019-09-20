@@ -16,9 +16,11 @@ in particular that are very simple to get started with and can be uses to do the
 to show how the *lineinfile* module can carry out it's modifications to a file using the a YML playbook file.
 
 ```
-
-
-text
-
+	- name: give cit480 group sudo access to run traceroute command
+	  lineinfile:
+	     dest: /etc/sudoers
+		 insertafter: '^%admins'
+		 line: '%admins ALL=(ALL) NOPASSWD: /usr/sbin/traceroute'
+		 validate: /usr/sbin/visudo -cf %s
 ```
 
