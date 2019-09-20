@@ -16,11 +16,15 @@ in particular that are very simple to get started with and can be uses to do the
 to show how the *lineinfile* module can carry out it's modifications to a file using the a YML playbook file.
 
 ```
-	- name: give cit480 group sudo access to run traceroute command
-	  lineinfile:
+     - name: give cit480 group sudo access to run traceroute command
+	   lineinfile:
 	     dest: /etc/sudoers
-		 insertafter: '^%admins'
-		 line: '%admins ALL=(ALL) NOPASSWD: /usr/sbin/traceroute'
-		 validate: /usr/sbin/visudo -cf %s
+         insertafter: '^%admins'
+         line: '%cit480 ALL=(ALL) NOPASSWD: /usr/sbin/traceroute'
+         validate: /usr/sbin/visudo -cf %s
 ```
-
+So let's break down this task into each paramater.
+- **name:** A human readable name of the task that is going to be carried out on the host computers.  It makes it easier for other people to see what you're accomplishing with the task.
+- **lineinfile:** The declaration of the module we're going to use to carry out the task, in this case, look into a file at a specific line.
+- **dest:** The file that we're going to be accessing, in this case, the "sudoers" file in the "/etc" folder.
+- **insertafter:** 
