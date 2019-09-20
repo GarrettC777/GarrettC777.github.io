@@ -27,4 +27,6 @@ So let's break down this task into each paramater.
 - **name:** A human readable name of the task that is going to be carried out on the host computers.  It makes it easier for other people to see what you're accomplishing with the task.
 - **lineinfile:** The declaration of the module we're going to use to carry out the task, in this case, look into a file at a specific line.
 - **dest:** The file that we're going to be accessing, in this case, the "sudoers" file in the "/etc" folder.
-- **insertafter:** 
+- **insertafter:**  The line to look for, in this case "^%admins" and might I add, this is the part that I got stuck with.  the **^** symbol **must** be in there for this parameter and originally I had thought that there was a line in the file with that symbol in it.  This line also specifies to insert the new text on the next line.
+- **line:** The line to insert into the file, in this case "%cit480 ALL=(ALL) NOPASSWD: /usr/sbin/traceroute".
+- **validate:** This command will define how to validate the file before actually modifying the file.  In this case beign modified with visudo and the full path to the command must be specified.
