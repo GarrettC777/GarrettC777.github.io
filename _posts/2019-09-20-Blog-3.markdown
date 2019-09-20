@@ -1,7 +1,24 @@
 ---
 layout: post
-title:  "Overview of Modifying files with Ansible"
+title:  "Overview of Modifying files with Ansible Playbook"
 date:   2019-09-20 20:59:34 -0700
 categories: jekyll update
 ---
  
+This week I got my hands on Ansible Automation first hand creating a couple of playbooks and deploying them inside containers
+on my localhost.  Ansible is pretty simple to get started with as it has amazing documentation on their website.  Despite this, I did
+run into a few roadblocks a long the way with inputing text into an existing file using ansible.  This post really isn't just to share with
+you my struggles and to further strengthen my knowledge with this tool, but also to help anyone who's having struggles with the Ansible module *lineinfile*.
+So let's get right to it.
+
+The module that carries out the task of copying, modifying, or removing text in a file is the *lineinfile* module.  There are a few important paramters
+in particular that are very simple to get started with and use to do the job such as *insertafter*, *line*, *mode*, *regexp*.  Here is an example we can break down
+to show how the *lineinfile* module can carry out it's modifications to a file using the a YML playbook file.
+
+---
+
+
+text
+
+---
+
