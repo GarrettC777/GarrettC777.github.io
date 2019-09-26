@@ -1,0 +1,31 @@
+---
+layout: post
+title:  "Teraform with Node_Exporter"
+date:   2019-09-26 20:59:34 -0700
+categories: jekyll update
+---
+ 
+This week will be a bit of an overview of what Prometheus and Node_exporter are an how they work together to bring metric
+data to your fingertips.  Prometheus is a system monitoring tool that allows the user to query data that the system is logging
+which would normally have not been utilized. There are other programs that do this such as Elasticsearch, but that is more
+for indexing searches and easy access to data of multiple kinds.  To get started with Prometheus, I spun up a docker container
+and imediately downloaded the latest version of Prometheus and uncompressed it on my Ubuntu container.  After that, just to make
+sure it was working correctly, I started prometheus using the standard *prometheus.yml* file.
+```
+./prometheus --config.file=prometheus.yml
+```
+I checked on my localhost in a web browser on port 9090 and sure enough, the service was running.
+After that, I downloaded and ran Node_Exporter.  Node_Exporter works with Prometheus to give a more vast and specific range of data
+to the user by exposing more statistics.  We can do this by configuring the prometheus.yml config file to use *node_exporter* as a 
+source of metrics with the *Scrape_configs* block.
+```
+Scrape_configs
+	-  job_name:'node'
+	   static_configs:
+	-  targets:['localhost:9100']
+```
+- job_name: this refers to the node_exporter instance.
+- targets: this is where the node_exporter instance is running, in our case, on our localhost on port 9100.
+
+While this explanation was rather short, I hope that it gave you a great simple understanding of how Prometheus works with node_exporter and how
+node_exporter can add more variety and clarity to the metric monitoring of Prometheus. 
