@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Teraform with Node_Exporter"
+title:  "Prometheus with Node_Exporter"
 date:   2019-09-26 20:59:34 -0700
 categories: jekyll update
 ---
