@@ -1,0 +1,30 @@
+---
+layout: post
+title:  "Winlogbeats Configuration With Elasticsearch"
+date:   2019-10-03 20:59:34 -0700
+categories: jekyll update
+---
+ 
+Elasticsearch is an amazing index tool that companies use to make their search engines faster and more efficient, but that isn't Elasticsearch's only usecase.  Elasticsearch can also be used for data analysis and threat hunting.  This is what interests me most about Elasticsearch.  Elasticsearch uses lightweight services called beats that run on the monitored machiens that send log files back to the elasticsearch node, or in my case, logstash, which is a pipeline that can further parse the logs for efficiency and then pass it on to the final elasticsearch instance.  Now that I've covered what the relationship with these services are, let's get into winlogbeats.
+
+Winlogbeats is basically a flavor of the beats service that is specifically designed for a Windows computer that specifically sends windows event logs to the elasticsearch instance (or logstash).  Windows computers store logs unlike most other beats and thus has gained itself it's own beats version.  Events that can be sent over to are listed here:
+
+- System events
+- Hardware events
+- Security events
+- Application events
+
+For a real-world example for configuration of the YML file, I have recently installed windows on a new computer of mine and want to add winlogbeats on it to monitor all aspects of it.  I'd like it to point straight to my Elasticsearch instance running on a seperate computer.  This elasticsearch instance is a single master node instance.  Here is a configuration that would suit me to get it started.
+
+```
+winlogbeat.event_logs:
+	- name: System
+	- name: Hardware
+	- name: Security
+	- name: Application
+
+output.elasticsearch:
+	hosts:
+		- 192.168.0.2:9200
+```
+This is a very stripped down version of a winlogbeats configuration file, but it will start sending those events to the elasticsearch node once it is started as a service on the windows computer.  The first block, *winlogbeat.event_logs* is telling the windlogbeats service which type of logs to send over to the elasticsearch node.  The second block, *output.elasticsearch* is telling the service the IP address at which the elasticsearch master node is hosted on with it listening on the default port 9200.  Once again, this is a very basic configuration that at least will get the service to start sending data to the elasticsearch service.  There can be a lot more done to make the information more readable and more able to be queried.
