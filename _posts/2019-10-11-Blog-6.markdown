@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Configuring Ansible Host File to Use SSH Keys for Remote EC2 Host"
-date:   2019-10-03 20:59:34 -0700
+date:   2019-10-11 12:59:34 -0700
 categories: jekyll update
 ---
  
