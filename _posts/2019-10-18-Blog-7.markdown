@@ -1,0 +1,41 @@
+---
+layout: post
+title:  "The Elastic Stack"
+date:   2019-10-11 12:59:34 -0700
+categories: jekyll update
+---
+ 
+Elasticsearch is a wonderful search tool that allows the indexing of data in ways that allow you to interact
+with it more dynamically.  This alone is the greatest tool out of the Elastic Stack, but yet it cannot work on it's
+own.  There's more modules that The Elastic Team has created in order to acquire the data, index it, and present it
+all in a way that works best for the user.  The modules I'm going to discuss here are ElasticSearch, ofcourse, but also
+Beats, Logstash, and Kibana.  so let's dive into it.
+
+###### Beats
+The first thing to think about is what data we're trying to capture, and where we are trying to capture it.  
+This is where beats comes in.  There are many flavors of beats depending on what data you'd like to capture, 
+but in a sense, it is the sender of the data to the elasticsearch instance.  For example, if I'm trying to capture
+log info on a windows computer (example:[WinLogBeats Config w/ Elasticsearch](https://garrettc777.github.io/jekyll/update/2019/10/04/Blog-5.html),
+I'd install the winlogbeats service on the windows computer that the data will be sent from and point it towards
+my logstash instance.
+
+###### Logstash
+That brings us to logstash.  Logstash is a pipeline that allows you to further refine the logs and index them
+in a more specific way that meets your needs depending on how you'd like to query your data.  You *can* always
+send the data straight to elasticsearch but it won't be quite as refined and you may not be able to query specific
+information.  From here, logstash sends the data to elasticsearch.
+
+###### Elasticsearch
+Ah, Elasticsearch, the crown jewel.  Without this, none of the other modules would have much of a meaning.  This
+is the main component that allows data to be queriable.  This is what allows such fast search engines these days.
+It's not to say Elasticsearch is the only program for this, as there are others that are more frequently used 
+such as Splunk.  So now that the data is there, what can you do with it?
+
+###### Kibana
+From here, you'll probably want to query and visualize your data so you can turn that data into information and thus
+gain knowledge from that information.  That's where Kibana comes in.  Kibana is a great interface that allows you to
+control many aspects of Elasticsearch including data health, elastic stack infrastructure configuration, and most 
+importantly, the visualization of the data.  You can visualize this data in charts and graphs.
+
+This is a very simple Elastic Stack that can get up and running in no time with a bit of configuration.  This is a
+common elastic stack configuration for Security.
