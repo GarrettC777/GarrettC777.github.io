@@ -11,7 +11,7 @@ own.  There's more modules that The Elastic Team has created in order to acquire
 all in a way that works best for the user.  The modules I'm going to discuss here are ElasticSearch, ofcourse, but also
 Beats, Logstash, and Kibana.  so let's dive into it.
 
-###### Beats
+## Beats
 The first thing to think about is what data we're trying to capture, and where we are trying to capture it.  
 This is where beats comes in.  There are many flavors of beats depending on what data you'd like to capture, 
 but in a sense, it is the sender of the data to the elasticsearch instance.  For example, if I'm trying to capture
@@ -19,19 +19,19 @@ log info on a windows computer (example:[WinLogBeats Config w/ Elasticsearch](ht
 I'd install the winlogbeats service on the windows computer that the data will be sent from and point it towards
 my logstash instance.
 
-###### Logstash
+## Logstash
 That brings us to logstash.  Logstash is a pipeline that allows you to further refine the logs and index them
 in a more specific way that meets your needs depending on how you'd like to query your data.  You *can* always
 send the data straight to elasticsearch but it won't be quite as refined and you may not be able to query specific
 information.  From here, logstash sends the data to elasticsearch.
 
-###### Elasticsearch
+## Elasticsearch
 Ah, Elasticsearch, the crown jewel.  Without this, none of the other modules would have much of a meaning.  This
 is the main component that allows data to be queriable.  This is what allows such fast search engines these days.
 It's not to say Elasticsearch is the only program for this, as there are others that are more frequently used 
 such as Splunk.  So now that the data is there, what can you do with it?
 
-###### Kibana
+## Kibana
 From here, you'll probably want to query and visualize your data so you can turn that data into information and thus
 gain knowledge from that information.  That's where Kibana comes in.  Kibana is a great interface that allows you to
 control many aspects of Elasticsearch including data health, elastic stack infrastructure configuration, and most 
