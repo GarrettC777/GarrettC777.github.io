@@ -27,3 +27,17 @@ Terraform has many resources that the user can access to create the enviornments
 POLICY
 }
 ```
+Here I have a very simple group policy that is attached inside the aws_iam_group_policy resource block through a JSON formatted string.  As for what this group policy entails, in short, it allows users of the specific group to access resources and perform any action with those resources as long as the region that they are accessing them in is us-west-2 (oregon region).  This isn't something you'd use in production but for the case of my class project, it'll work just fine.  So let's break it down.
+- **Version**: This sets the specific language syntax rules that are going to process the policy document.  It defines the version of the policy language.  In our case, it is the latest version, being "2012-10-17".
+- **Statement**: This is the most important part of a policy document, as it is in sumation, each permission that you want to apply.  Each actual statement is a JSON block enclosed in braces and there can be multiple that fit in an array, that array being the Statement element.
+- **Sid**: Inside of the statement block, you will want to keep track of each statement with a specific id.  This ID must be unique to each statement in the JSON policy.
+- **Action**: The action element decribes the action that a user can perform for a specific aws service.  For example, I know I just made all actions available for any service, but a better example would be "Action": "ec2:StartInstances".  For the ec2 resource, a this user can start an instance, or cannot based on the next argument we will talk about.
+- **Effect**:  The effect argument is pretty simple.  This allows a user to describe what context the rest of the policy is about.  Is it a statement that is regarding the restriction of access to a specific resource and/or action or is it a statement regarding the access gained to a specific resource and/or action.  This can only be "Allow" or "Deny" but I should note that by default, the resources are denied.
+- **Resource**: You can specify the resource you are giving or removing access to based on the ARN (Amazon Resource Name).  
+- **Condition**: This specifies a condition that the policy will take effect under.  In my case, the condition is that the region they are performing the action in must be equal to the us-west-2 region, which is oregon.
+
+While this is a very basic policy with only one statement, I hope it shows that regardless of the syntax and arguments at play, as long a the user knows what policies that they want to implement, it really only can get so complicated.  I'd argue that knowing what you want to restrict and what you want to allow is more difficult than actually implementing it through the JSON formatted policy.
+
+If you want to format your own group policy and don't know the syntax, there's a helpful took that AWS provides on their website to help you get started by converting your rule into a JSON formatted string. [AWS Policy Generator]: https://awspolicygen.s3.amazonaws.com/policygen.html
+
+If you would like to learn more about the different arguments in an AWS policy since I did not cover everything, I will also provide the link to the aws guide.[AWS JSON Policy Guide]: https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html
