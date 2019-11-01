@@ -1,0 +1,29 @@
+---
+layout: post
+title:  "Terraform aws_iam_group_policy Breakdown"
+date:   2019-11-01 12:59:34 -0700
+categories: jekyll update
+---
+ 
+Terraform has many resources that the user can access to create the enviornments, users, and other configurations all from the aws-cli.  One of the very important resources is the aws_iam_group_policy, for with this, a policy can be attached to iam users through the group they belong to.  I found myself creating a very simple group policy for a project in my senior design class.  In this article, I'd like to break down some of the different parts of the group policy itself, as it can be a little confusing at first glance.  Here is an excerpt from my terraform code that shows the entire group policy I've created.
+```
+ policy = <<POLICY
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Stmt1572583073912",
+      "Action": "*",
+      "Effect": "Allow",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:RequestedRegion": "us-west-2"
+        }
+      }
+    }
+  ]
+}
+POLICY
+}
+```
