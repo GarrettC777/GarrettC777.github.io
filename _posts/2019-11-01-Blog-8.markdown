@@ -38,6 +38,6 @@ Here I have a very simple group policy that is attached inside the aws_iam_group
 
 While this is a very basic policy with only one statement, I hope it shows that regardless of the syntax and arguments at play, as long a the user knows what policies that they want to implement, it really only can get so complicated.  I'd argue that knowing what you want to restrict and what you want to allow is more difficult than actually implementing it through the JSON formatted policy.
 
-If you want to format your own group policy and don't know the syntax, there's a helpful took that AWS provides on their website to help you get started by converting your rule into a JSON formatted string. [AWS Policy Generator]: https://awspolicygen.s3.amazonaws.com/policygen.html
+If you want to format your own group policy and don't know the syntax, there's a helpful took that AWS provides on their website to help you get started by converting your rule into a JSON formatted string. [AWS Policy Generator](https://awspolicygen.s3.amazonaws.com/policygen.html)
 
-If you would like to learn more about the different arguments in an AWS policy since I did not cover everything, I will also provide the link to the aws guide.[AWS JSON Policy Guide]: https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html
+If you would like to learn more about the different arguments in an AWS policy since I did not cover everything, I will also provide the link to the aws guide.[AWS JSON Policy Guide](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html)
