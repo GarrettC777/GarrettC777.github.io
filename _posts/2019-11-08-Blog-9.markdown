@@ -1,0 +1,17 @@
+---
+layout: post
+title:  "SSH SCP Command Breakdown"
+date:   2019-11-08 12:59:34 -0700
+categories: jekyll update
+---
+ 
+On servers and even everyday work station computers, there are times when you need to securely copy over files
+to a desired host.  That's where SCP comes in, and it stands for Secure Copy.  It is a encrypted end-to-end
+transfer of files.  So let's break down a simple scp example usage.
+```
+scp -P 777 /home/stacy/images/image*.jpg stacy@myhost.com:/home/stacy/archive 
+```
+- **scp**:
+- **-P 777**:
+- **/home/stacy/images/image*.jpg**
+- **stacy@myhost.com:/home/stacy/archive**
