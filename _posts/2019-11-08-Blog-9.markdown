@@ -14,7 +14,7 @@ scp -P 777 /home/gary/images/image*.jpg gary@myhost.com:/home/gary/archive
 - **scp**:  This is the base command, without the rest of the required arguments involved.
 - **-P 777**:  This specifies that we'd like to cary out our secure transfer specifically on port 777, and this flag is not required if not needed.
 - **/home/gary/images/image*.jpg**: This is our computer, using the path to our file we'd like to copy to the remote host.
-- **gary@myhost.com:/home/gary/archive**: The desinationm, which in our case is the remote host.  You can also
+- **gary@myhost.com:/home/gary/archive**: The desination, which in our case is the remote host.  You can also
 change the host and destination around to copy something from the remote host to your machine.  It's also
 important to note that you need to add the user you're copying it to, with the specified ip address of that remote host,
 and it can be a domain like we see in this example.
