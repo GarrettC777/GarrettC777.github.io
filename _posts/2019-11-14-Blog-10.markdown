@@ -1,0 +1,28 @@
+---
+layout: post
+title:  "AWS Lambda Function Creation with Python"
+date:   2019-11-08 12:59:34 -0700
+categories: jekyll update
+---
+
+In Amazon Web Service, there are many things that need serverless tasks that can be carried out through cronjobs and such.  For example, say at a certain time, the web servers for a certain website should be down for routine situations.  Lambda is the way AWS carries out these tasks.  In this example, I'll show you the simple steps to creating the code that can work for *your* EC2 instances to run when they should, and stop when they shouldn't.
+
+**Here is the python code:**
+```
+import boto3
+region = 'us-west-1'
+instances = ['i-12345cb6de4f78g9h', 'i-08ce9b2d7eccf6d26']
+ec2 = boto3.client('ec2', region_name=region)
+
+def lambda_handler(event, context):
+    ec2.stop_instances(InstanceIds=instances)
+    print('stopped your instances: ' + str(instances))
+ ```
+*note: this code can be obtained from the aws website [here](https://aws.amazon.com/premiumsupport/knowledge-center/start-stop-lambda-cloudwatch/).*
+
+**Important aspects of this code:**
+- **Region**:  This portion is about what region your lambda function will be executed in.  This is the region that will be effected.
+- **instances**: This is perhaps the most important part, because this lets you decide which EC2 instances you would like to have effected by this code.  When this code is executed, the two EC2's with those IDs will be stopped and if you look in your EC2 dashboard, you'll see that they have indeed if it worked correctly.  The EC2 dashboard is where you'll find the IDs that are to be placed in the instances array up above.
+-**    ec2.stop_instances(InstanceIds=instances)**: This part can be changed to start the instance instead.  Instead of ec2.stop_instances, it would be changed to ec2.start_instances.
+
+These parts are the only parts that really need to be changed to get it up and running.  All there is to do now is create cronjobs for both of them to start and stop without user intervention.  Thank you.
