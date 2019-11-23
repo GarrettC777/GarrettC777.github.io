@@ -1,0 +1,50 @@
+---
+layout: post
+title:  "Linux Grep Command"
+date:   2019-11-08 12:59:34 -0700
+categories: jekyll update
+---
+
+Within the linux operating system and other unix-based operating systems, the grep command processes text line for line
+and prints the lines which related to the pattern specified.  The syntax goes as follows:
+```
+grep [OPTION]... PATTERN [FILE]...
+```
+For example, in the log file (*auth.log*)  below, a list of attempts from a user trying to get into an account are shown.
+Let's say he got in, and I'd like to know when he got in.  I could invoke the grep command and find out.
+```
+Oct 11 10:36:01 myraptor sshd[29975]: Connection from 56.13.188.38 port 55322
+Oct 11 10:36:01 myraptor sshd[29977]: Failed password for harvey from 56.13.188.38 port 55322 ssh2
+Oct 11 10:36:01 myraptor sshd[29979]: Received disconnect from 56.13.188.38: Bye Bye
+Oct 11 10:36:01 myraptor sshd[29981]: Connection from 56.13.188.38 port 55323
+Oct 11 10:36:02 myraptor sshd[29983]: Failed password for harvey from 56.13.188.38 port 55323 ssh2
+Oct 11 10:36:02 myraptor sshd[29985]: Received disconnect from 56.13.188.38: Bye Bye
+Oct 11 10:36:04 myraptor sshd[29987]: Connection from 56.13.188.38 port 55324
+Oct 11 10:36:05 myraptor sshd[29989]: Failed password for harvey from 56.13.188.38 port 55324 ssh2
+Oct 11 10:36:05 myraptor sshd[29991]: Failed password for harvey from 56.13.188.38 port 55324 ssh2
+Oct 11 10:36:05 myraptor sshd[29993]: Received disconnect from 56.13.188.38: 11: Bye Bye
+Oct 11 10:36:55 myraptor sshd[29995]: Connection from 30.167.206.91 port 55325
+Oct 11 10:36:57 myraptor sshd[29997]: Failed password for harvey from 30.167.206.91 port 55325 ssh2
+Oct 11 10:36:57 myraptor sshd[29999]: Received disconnect from 30.167.206.91: 11: Bye Bye
+Oct 11 10:36:58 myraptor sshd[30001]: Connection from 30.167.206.91 port 55326
+Oct 11 10:36:59 myraptor sshd[30003]: Accepted password for harvey from 30.167.206.91 port 55326 ssh2
+Oct 11 10:36:59 myraptor sshd[30005]: pam_unix(sshd:session): session opened for user harvey by (uid=0)
+```
+The full command to be used:
+```
+grep -n -i "Accepted" auth.log
+```
+**Command Breakdown**
+- **grep**: The base command that performs the lookup.
+- **-n**: This flag will show the line number of the successful matches.
+- **-i**: This ignores the case and looks for any case of the word "Accepted".
+- **auth.log**: This is the file to look inside of and grab the lines out of.
+
+So the output we will see will look something like this:
+```
+15: Oct 11 10:36:59 myraptor sshd[30003]: Accepted password for harvey from 30.167.206.91 port 55326 ssh2
+```
+
+There are many other options for finding text that you can look at regarding special cases and if needed, typing
+"grep --help" on the command line would be a good start.  For such a simple command, it can prove
+to be very powerful.
