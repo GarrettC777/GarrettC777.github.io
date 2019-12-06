@@ -10,7 +10,7 @@ want to have the availability of a temperature monitor at your fingertips.  I ha
 terrible laptop that has had a history of overheating.  It's easy to see why a temperature monitor would be could in these cases and while Ubuntu doesn't come with a monitor out of the box, it definately
 has the tools to create one, so let's get into it.
 
-###Psensor###
+###Psensor
 Psensor is the tool we will be installing onto the ubuntu machine for monitoring the temperature as it is capable of many different actions including:
 - Temperature of the motherboard, CPU, GPU, and HDD's.
 - CPU fan speed.
