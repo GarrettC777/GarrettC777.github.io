@@ -1,0 +1,37 @@
+---
+layout: post
+title:  "Temperature Monitoring on a Ubuntu System with Psensor"
+date:   2019-12-06 12:59:34 -0700
+categories: jekyll update
+---
+
+It may seem like a simple thing that should be included in the Ubuntu operating system, but in fact Ubuntu doesn't come with a way to monitor temperatures, and if you're like me, you always
+want to have the availability of a temperature monitor at your fingertips.  I have a couple of Ubuntu systems, one being a higher performance gaming tower (Yes even on Ubuntu!) and the other being my 
+terrible laptop that has had a history of overheating.  It's easy to see why a temperature monitor would be could in these cases and while Ubuntu doesn't come with a monitor out of the box, it definately
+has the tools to create one, so let's get into it.
+
+###Psensor###
+Psensor is the tool we will be installing onto the ubuntu machine for monitoring the temperature as it is capable of many different actions including:
+- Temperature of the motherboard, CPU, GPU, and HDD's.
+- CPU fan speed.
+- Alarm setting capabilities
+- Graphical Representation of temperatures graphs and text.
+
+There are a list of commands that need to be run before installing Psensor.
+```
+sudo apt install lm-sensors hddtemp
+```
+This will install a command line utility for hardware monitoring and an aditional program to monitor hard disk temperature.  After, you will need to
+detect the hardware sensors of your laptop or computer.
+```
+sudo sensor-detect
+```
+Then, for good measure, run this simple command to ensure it worked.
+```
+sensors
+```
+After ensuring that you get an output showing your cores, temperatures and such, there's only one thing left to do and that's to install the actual Psensors program.
+```
+sudo apt install psensors
+```
+It's a pretty simple execution of commands that ultimately leads to a very important tool.  You can even go a step further and set up alarms to detect when the temperature goes above an unwanted temperature.
