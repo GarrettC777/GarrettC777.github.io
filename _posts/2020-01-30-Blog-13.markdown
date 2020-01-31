@@ -21,3 +21,13 @@ You can also give it arguments if your program takes arguments.
 ```
 gdb --args a.out arg1 arg2
 ```
+Now that you're in the gdb with your executable, you can start debugging it.  Here are the basic commands that can help you get started.
+- Refresh: refresh the display.
+- Run: Run the program.
+- n (next): Step through to the next instruction.
+- break POINT: Setting a break point.
+- Continue: Continues to the next breakpoint if set.
+- print VARIABLE: prints a variable's value.
+- watch VARIABLE: watches for a variable when it changes.
+
+These commands can help get you out of the gate to start debugging your own programs.  The gdb is very helpful with runtime errors and more specifically, logical errors.  Thank you.
