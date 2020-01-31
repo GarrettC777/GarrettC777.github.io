@@ -1,0 +1,23 @@
+---
+layout: post
+title:  "The Basics of The GDB Debugger"
+date:   2020-01-30 12:59:34 -0700
+categories: jekyll update
+---
+The GDB debugger allows you to step through a program line-by-line, note variable values, set breakpoints where the execution pauses, and finally, pause and continue execution of a program.  The GDB debugger supports many languages such as Assembly, C, and C++.  To get started with the GDB debugger, first the program will need to be compiled with gcc for debugging.  This can be done using this command and flags bellow.
+```
+gcc -Wall -g program.c
+```
+- **gcc**: This is the GNU Compiler Collection, a command that compiles programs from multiple languages.  This is needed to compile the program before it is used in the GDB.
+- **-Wall**: This will check for warnings and errors in the program and it's good practice to use this flag with compiling the code.
+- **-g**: This flag is important as it preserves identifiers and symbols so you can get a better visual debugging it later with the GDB debugger.
+- **program.c**: A sample program name, where you would put your program title that you'd like to debug.
+
+After this you will need to start the GDB using the executable created from the previous compiling.
+```
+gdb a.out
+```
+You can also give it arguments if your program takes arguments.
+```
+gdb --args a.out arg1 arg2
+```
