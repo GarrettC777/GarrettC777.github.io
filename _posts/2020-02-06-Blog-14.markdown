@@ -4,6 +4,13 @@ title:  "Configuring the Raspberry Pi PiHole"
 date:   2020-02-06 12:59:34 -0700
 categories: jekyll update
 ---
-The Raspberry Pi has so many different uses, when I bought a Raspberry Pi 3, the first project I wanted to try was the PiHole.  The PiHole is a network wide DNS level add blocker for your personal network needs.  The best part is, it's free!  It's pretty simple to get started as long as you remember to do a few things once the PiHole is installed so let's get into it.  
+The Raspberry Pi has so many different uses.  When I bought a Raspberry Pi 3, the first project I wanted to try was the PiHole.  The PiHole is a network wide DNS level add blocker for your personal network needs.  The best part is.. it's free!  It's pretty simple to get started as long as you remember to do a few things once the PiHole is installed so let's get into it.  
 
-The first thing you're going to want to do is figure out what operating system you're going to be running the software on, and you can find a list of supported operating systems on the PiHole website [here](https://docs.pi-hole.net/main/prerequesites/#supported-operating-systems).
+The first thing you're going to want to do is figure out what operating system you're going to be running the software on, and you can find a list of supported operating systems on the PiHole website [here](https://docs.pi-hole.net/main/prerequesites/#supported-operating-systems).  Personally, I chose to work with [Ubuntu Server](https://ubuntu.com/download/raspberry-pi) because I like Debian Linux, but there are other options.  Once you have installed your favorite OS for the application you need to run this command in the terminal to install PiHole.
+```
+curl -sSL https://install.pi-hole.net | bash
+```
+- **Curl**: The curl command is used to transfer data from or to a server, using many supported protocols. 
+- **-SSL**:  The -sSL flag attempts to connect securely using SSL or TLS. 
+
+The rest is the URL and yes, piping it to bash.  Piping it to bash is not necesarilly the safest way of doing things.  It's all about trust at that point and when you pipe things to bash, it runs code without you getting the chance to read it first.  So if you want to practice better habbits, there's an alternate way of installing this software on their [github page](https://github.com/pi-hole/pi-hole/#one-step-automated-install), but I haven't felt the need to do so with this program.
