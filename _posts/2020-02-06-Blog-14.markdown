@@ -1,0 +1,9 @@
+---
+layout: post
+title:  "Configuring the Raspberry Pi PiHole"
+date:   2020-02-06 12:59:34 -0700
+categories: jekyll update
+---
+The Raspberry Pi has so many different uses, when I bought a Raspberry Pi 3, the first project I wanted to try was the PiHole.  The PiHole is a network wide DNS level add blocker for your personal network needs.  The best part is, it's free!  It's pretty simple to get started as long as you remember to do a few things once the PiHole is installed so let's get into it.  
+
+The first thing you're going to want to do is figure out what operating system you're going to be running the software on, and you can find a list of supported operating systems on the PiHole website [here](https://docs.pi-hole.net/main/prerequesites/#supported-operating-systems).
