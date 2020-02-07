@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Configuring the Raspberry Pi PiHole"
+title:  "Installing the Raspberry Pi PiHole"
 date:   2020-02-06 12:59:34 -0700
 categories: jekyll update
 ---
@@ -14,3 +14,22 @@ curl -sSL https://install.pi-hole.net | bash
 - **-SSL**:  The -sSL flag attempts to connect securely using SSL or TLS. 
 
 The rest is the URL and yes, piping it to bash.  Piping it to bash is not necesarilly the safest way of doing things.  It's all about trust at that point and when you pipe things to bash, it runs code without you getting the chance to read it first.  So if you want to practice better habbits, there's an alternate way of installing this software on their [github page](https://github.com/pi-hole/pi-hole/#one-step-automated-install), but I haven't felt the need to do so with this program.
+
+The last thing you'll need to do is likely the most important step, for without it, you won't be able to make use of the PiHole program.  You will need to log in to your router and configure the DHCP clients to use the PiHole as their primary DNS server.  After this you will need to renew your IP on the devices on your network so they can recieve the new DNS info.
+
+For windows:
+```
+ipconfig /renew
+```
+
+For Ubuntu:
+```
+sudo dhclient -r
+sudo dhclient
+```
+
+After this is all squared away and the add-blocker is up, you can always update ad lists, debug, whitelist, blacklist, view the live log file, and more using the command line or the web interface dashboard using the following formatted address.
+
+*http://<IP_ADDPRESS_OF_YOUR_PI_HOLE>/admin/*
+
+Now you can sit back and relax without the clutter of annoying ads in unwanted places.  Thanks for reading!
