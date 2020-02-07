@@ -30,6 +30,6 @@ sudo dhclient
 
 After this is all squared away and the add-blocker is up, you can always update ad lists, debug, whitelist, blacklist, view the live log file, and more using the command line or the web interface dashboard using the following formatted address.
 
-*http://<IP_ADDPRESS_OF_YOUR_PI_HOLE>/admin/*
+*http://IP_ADDPRESS_OF_YOUR_PI_HOLE/admin/*
 
 Now you can sit back and relax without the clutter of annoying ads in unwanted places.  Thanks for reading!
