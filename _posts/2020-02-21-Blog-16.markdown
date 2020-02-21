@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Dynamic Host Configuration Protocol Client-Server Interaction Using Wireshark"
+title:  "Dynamic Host Configuration Protocol Client-Server Interaction"
 date:   2020-02-21 12:59:34 -0700
 categories: jekyll update
 ---
