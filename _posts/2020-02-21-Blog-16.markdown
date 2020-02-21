@@ -8,3 +8,7 @@ In this article, we will look at how the dynamic host configuration protocol (DH
 
 Let's get into it then.  The Dynamic Host Configuration Protocol is used to create, remove, and renew IP addresses to a client on the network automatically.  A DHCP server can be set up on a network to achieve this.  Here below we have a sample packet capture showing the allocation process of an IP address to a client machine.
 ![Alt](/photos/packet.PNG "Packet Capture")
+
+The first line, we can see that the client(0.0.0.0) who doesn't have an address yet is broadcasting out to find a DHCP server available hence 255.255.255.255.  This is known as **DHCPDISCOVER**, which is also conveniently noted in the info section of wireshark in the snapshot above.  From there, if the DHCP server is set up on the network(and in our case it is), the DHCP server responds with a **DHCPOFFER** packet offering configuration parameters for the client.  The next packet is a **DHCPREQUEST** packet from the client to the server requesting the offered parameters from that single server.  Last but not least, the DHCP server will respond with a **DHCPACK** with the included configuration parameters and the network address it will be assigned for the time being until the lease is up. 
+
+This is the simple DHCP assignment interaction with the client and server.  The protocol allows for other options such as DHCPNAK, DHCPDECLINE, DHCPRELEASE, and DHCPINFORM which you can read about further in the [RFC 2131](https://www.ietf.org/rfc/rfc2131.txt) article.  Thank you.
