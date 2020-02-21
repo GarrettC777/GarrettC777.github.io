@@ -7,4 +7,4 @@ categories: jekyll update
 In this article, we will look at how the dynamic host configuration protocol (DHCP) works to dynamically allocate network addresses automatically to clients on the network.  This will be done in part using a sample wireshark capture that can be found on [Wireshark Website](https://wiki.wireshark.org/SampleCaptures).  We won't get into wireshark here though, but if you're interested in network traffic analysis, follow that in-line link.
 
 Let's get into it then.  The Dynamic Host Configuration Protocol is used to create, remove, and renew IP addresses to a client on the network automatically.  A DHCP server can be set up on a network to achieve this.  Here below we have a sample packet capture showing the allocation process of an IP address to a client machine.
-![Packet Capture][/photos/packet.PNG]
+![Alt](/photos/packet.PNG "Packet Capture")
