@@ -1,29 +1,7 @@
 ---
 layout: post
-title:  "Mounting an EBS volume with an ext4 filesystem to an existing EC2"
-date:   2020-02-11 12:59:34 -0700
+title:  "TCPDUMP Command Overview"
+date:   2020-02-21 12:59:34 -0700
 categories: jekyll update
 ---
-
-Once you attach an Amazon EBS volume to an EC2 instance, it doesn't end there.  You still need to format and mount the file system to a directory in your linux instance.  When adding an EBS volume, whether it be 1gb or 100gb, you'll need to specify what type of filesystem you want on there to make sure it correlates with your specific needs.  In my example, since I needed to format an EBS volume recently, I will use ext4.  If you do not specify a type while formatting then the command will look like this.
-```
-sudo mkfs /dev/xvdf
-```
-In the example above, */dev/xvdf* is the volume I wish to format.  The command *mkfs* when used without the -t type flag will automatically use the xfs filesystem.  In the next example we will use the -t flag like so.
-```
-sudo mkfs -t ext4 /dev/xvdf
-```
-One more thing before the volume is utilized is mounting it.  Make a directory and mount it at the directory like so.
-```
-sudo mkdir /data
-sudo mount /dev/xvdf /data
-```
-Furthermore, you will want to add an entry for your device mounted in the */etc/fstab* file.  Before adding anything, make sure you make a backup of your original fstab file.
-```
-sudo cp /etc/fstab /etc/fstab.original
-```
-Next, find the unique identifier that the mount has with the *blkid* command.  Once found, copy the UUID and insert it into the correct portion of the fstab entry.
-```
-UUID=INSERT_UUID_HERE   /data ext4   defaults,nofail    0 2
-```
-Everything should be good to go, even in a reboot, the filesystem will be mounted at this point.  Thanks for reading.
+![test](/photos/Capture.PNG)
