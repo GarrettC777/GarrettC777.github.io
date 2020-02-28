@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Creating an AWS CodeCommit Repository"
+title:  "Creating and Accessing an AWS CodeCommit Repository"
 date:   2020-02-21 12:59:34 -0700
 categories: jekyll update
 ---
@@ -13,6 +13,13 @@ This article will be a simple guideline to creating an AWS CodeCommit repository
 
 This will allow the user to interact with the CodeCommit Resource to the full extent, however, the user still requires access to the CodeCommit resource through the command line so they can use git as a way of publishing changes.  This requires HTTPS Git Credentials to be created for that user.
 
-2. Create the HTTPS Git Credentials
+2. Create the HTTPS Git Credentials.
     - Identity and Access Management > Users > YourUser > Security Credentials > **Generate Credentials**
 ![Alt](/photos/CodeCommit2.png "generate credentials")
+
+Make sure you download the credentials file because it will be need to be provided when you update the repository at all via command line.
+
+3. Create CodeCommit Repository.
+    - Developer Tools > CodeCommit > Repositories > Create repository
+    - Add the name and also the optional description if you'd like.
+![Alt](/photos/CodeCommit3.png "generate credentials")
