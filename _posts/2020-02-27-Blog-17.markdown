@@ -1,0 +1,12 @@
+---
+layout: post
+title:  "Creating an AWS CodeCommit Repository"
+date:   2020-02-21 12:59:34 -0700
+categories: jekyll update
+---
+This article will be a simple guideline to creating an AWS CodeCommit repository.  Amazon has tons of different tutorials that can help with choosing the right source solution for your pipeline, however, I will be using CodeCommit for the sake of keeping all my resources within AWS and because I have HTTPS Git credentials for my user to use with AWS CodeCommit, and you'll learn about that in this tutorial.  You will need access to IAM services as well as CodeCommit access.
+
+1. Add AWSCodeCommitFullAccess Policy to desired user.
+    - Identity and Access Management > Users > YourUser > Permissions > **AddPermissions**
+    - AWS Managed Policy: AWSCodeCommitFullAccess
+![Alt](/photos/CodeCommit1.png "Permissions")
