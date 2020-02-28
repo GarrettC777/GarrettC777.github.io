@@ -29,4 +29,4 @@ Make sure you download the credentials file because it will be need to be provid
     ```
     git clone https://git-codecommit.us-west-2.amazonaws.com/v1/repos/YourFirstRepository
     ```
-    
+Once this is all done, all that is left to do is add your code, commit your changes, and push to the master branch.  Thanks for reading.
