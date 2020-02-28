@@ -10,3 +10,9 @@ This article will be a simple guideline to creating an AWS CodeCommit repository
     - Identity and Access Management > Users > YourUser > Permissions > **AddPermissions**
     - AWS Managed Policy: AWSCodeCommitFullAccess
 ![Alt](/photos/CodeCommit1.png "Permissions")
+
+This will allow the user to interact with the CodeCommit Resource to the full extent, however, the user still requires access to the CodeCommit resource through the command line so they can use git as a way of publishing changes.  This requires HTTPS Git Credentials to be created for that user.
+
+2. Create the HTTPS Git Credentials
+    - Identity and Access Management > Users > YourUser > Security Credentials > **Generate Credentials**
+![Alt](/photos/CodeCommit2.png "generate credentials")
