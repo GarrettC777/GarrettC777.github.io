@@ -7,14 +7,14 @@ categories: jekyll update
 In your IT career, you will likely need to query DNS information from a DNS name server for standard troubleshooting, configuration, and or security related tasks.
 Linux comes standard with it's own DNS command line query tool called "dig".  This blog post will go over how to use the command in different ways.
 **Simple query for csun.edu**
-![Alt](/photos/dig1.png "dig1")
+![Alt](/photos/dig1.PNG "dig1")
 As we can see from just issuing the command "dig csun.edu", we get the answer section showing that the A record asociated with csun.edu is 130.166.238.195.  An A record maps a domain name to an IPv4 IP address.  While this a good piece of information, there are other things that dig can be used to query with the right flags such as MX records in the example below.
 
 **Querying MX Record for Csun.edu**
-![Alt](/photos/dig2.png "dig2")
+![Alt](/photos/dig2.PNG "dig2")
 
 From the answer section above, we can see that csun.edu has to Mail Exchanger (MX) records associated with it, mxa and mxb.  As you can see though, it's very verbose, and there is actually a lot we can do to condense it to just the answer section.  You might need more information than just the answer section, but it is likely the most important part of any given query.  See below for the command flags to enter to clean up the output.
 **Simplified Output**
-![Alt](/photos/dig3.png "dig3")
+![Alt](/photos/dig3.PNG "dig3")
 
 These flags clean up the other sections of the output that you saw previously.  I hope this helps in understanding the fundamentals about the dig command in linux and if you'd like to learn more, there are other options for the dig command to help with different kinds of queries.  Thank you.
