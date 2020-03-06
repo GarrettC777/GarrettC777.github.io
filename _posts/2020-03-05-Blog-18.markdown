@@ -9,6 +9,7 @@ Linux comes standard with it's own DNS command line query tool called "dig".  Th
 
 **Simple query for csun.edu**
 ![Alt](/photos/dig1.PNG "dig1")
+
 As we can see from just issuing the command "dig csun.edu", we get the answer section showing that the A record asociated with csun.edu is 130.166.238.195.  An A record maps a domain name to an IPv4 IP address.  While this a good piece of information, there are other things that dig can be used to query with the right flags such as MX records in the example below.
 
 **Querying MX Record for Csun.edu**
