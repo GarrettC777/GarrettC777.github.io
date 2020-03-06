@@ -7,61 +7,14 @@ categories: jekyll update
 In your IT career, you will likely need to query DNS information from a DNS name server for standard troubleshooting, configuration, and or security related tasks.
 Linux comes standard with it's own DNS command line query tool called "dig".  This blog post will go over how to use the command in different ways.
 1. Simple query for csun.edu:
-`
-$dig csun.edu
-
-; <<>> DiG 9.11.3-1ubuntu1.7-Ubuntu <<>> csun.edu
-;; global options: +cmd
-;; Got answer:
-;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 21270
-;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
-
-;; OPT PSEUDOSECTION:
-; EDNS: version: 0, flags:; udp: 4096
-;; QUESTION SECTION:
-;csun.edu.                      IN      A
-
-;; ANSWER SECTION:
-csun.edu.               300     IN      A       130.166.238.195
-
-;; Query time: 28 msec
-;; SERVER: 192.168.0.5#53(192.168.0.5)
-;; WHEN: Thu Mar 05 23:18:50 PST 2020
-;; MSG SIZE  rcvd: 53
-`
+![Alt](/photos/dig1.png "dig1")
 As we can see from just issuing the command "dig csun.edu", we get the answer section showing that the A record asociated with csun.edu is 130.166.238.195.  An A record maps a domain name to an IPv4 IP address.  While this a good piece of information, there are other things that dig can be used to query with the right flags such as MX records in the example below.
 
 2. Querying MX Record for Csun.edu
-
-$dig csun.edu MX
-
-; <<>> DiG 9.11.3-1ubuntu1.7-Ubuntu <<>> csun.edu MX
-;; global options: +cmd
-;; Got answer:
-;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 54629
-;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1
-
-;; OPT PSEUDOSECTION:
-; EDNS: version: 0, flags:; udp: 4096
-;; QUESTION SECTION:
-;csun.edu.                      IN      MX
-
-;; ANSWER SECTION:
-csun.edu.               300     IN      MX      10 mxa-00186201.gslb.pphosted.com.
-csun.edu.               300     IN      MX      10 mxb-00186201.gslb.pphosted.com.
-
-;; Query time: 34 msec
-;; SERVER: 192.168.0.5#53(192.168.0.5)
-;; WHEN: Thu Mar 05 23:20:57 PST 2020
-;; MSG SIZE  rcvd: 112
+![Alt](/photos/dig2.png "dig2")
 
 From the answer section above, we can see that csun.edu has to Mail Exchanger (MX) records associated with it, mxa and mxb.  As you can see though, it's very verbose, and there is actually a lot we can do to condense it to just the answer section.  You might need more information than just the answer section, but it is likely the most important part of any given query.  See below for the command flags to enter to clean up the output.
-1. Simplified Output 
-
-$dig csun.edu +nocomments +noquestion +noauthority +noadditional +nostat
-
-; <<>> DiG 9.11.3-1ubuntu1.7-Ubuntu <<>> csun.edu +nocomments +noquestion +noauthority +noadditional +nostat
-;; global options: +cmd
-csun.edu.               300     IN      A       130.166.238.195
+3. Simplified Output 
+![Alt](/photos/dig3.png "dig3")
 
 These flags clean up the other sections of the output that you saw previously.  I hope this helps in understanding the fundamentals about the dig command in linux and if you'd like to learn more, there are other options for the dig command to help with different kinds of queries.  Thank you.
