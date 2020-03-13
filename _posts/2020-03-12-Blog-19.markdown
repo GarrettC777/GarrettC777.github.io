@@ -14,8 +14,12 @@ categories: jekyll update
 **Note:** We'll be skipping installation instructions of the Hypervisor, but just know that I'll be using VirtualBox for this example.
 
 ### Installing The Windows 10 VM
-&nbsp;&nbsp;&nbsp;&nbsp; Now that VirtualBox or the Hypervisor of your choice is installed and ready to go, you need to unzip the Windows 10 Virtual Machine folder you've downloaded and extract the contents.  Once you've done that, click on the *MSEdge - Win10.ova* file inside.  You should be prompted by your hypervisor to import the VM to your Hypervisor Library.
+&nbsp;&nbsp;&nbsp;&nbsp; Now that VirtualBox or the Hypervisor of your choice is installed and ready to go, you need to unzip the Windows 10 Virtual Machine folder you've downloaded and extract the contents.  Once you've done that, click on the *MSEdge - Win10.ova* file inside.  You should be prompted by your hypervisor to import the VM to your Hypervisor Manager.
 
 ![Alt](/photos/VirtualBox1.PNG "VirtualBox")
 <sub><sup><i>VirtualBox Import Prompt.</i></sup></sub>
 
+&nbsp;&nbsp;&nbsp;&nbsp; There are a few warnings you should look out for once it's been imported at least if you are using VirtualBox.  You will need to click on the settings tab of your newly imported virtual machine and hover over the *Invalid Settings Detected* warning at the bottom of the settings box.  You may find there are a number of problems you have to fix before powering on the machine.  You should see something similar to the image below.
+
+![Alt](/photos/VirtualBox2.PNG "VirtualBox Warning")
+<sub><sup><i>VirtualBox Warning.</i></sup></sub>
