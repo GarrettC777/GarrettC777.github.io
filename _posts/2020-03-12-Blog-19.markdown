@@ -4,7 +4,7 @@ title:  "Setting Up Your Malware Analysis Environment"
 date:   2020-03-12 12:59:34 -0700
 categories: jekyll update
 ---
-This week, I've been digging into malware analysis based on my curiousity for a piece of malware that caught my attention.  I wanted to run it, but I knew that I should take the propper precautions.  In this tutorial, I'm going to show you how to get started with a malware analysis environment to get started on a fun puzzle-solving path to figuring out what makes malware tick.  The applications of malware analysis heavily side with security.  To find out how malware works is the key to protecting against it.  So let's get started!
+This week, I've been digging into malware analysis based on my curiousity for a piece of malware that caught my attention.  I wanted to run it, but I knew that I should take the propper precautions.  In this tutorial, I'm going to show you how to run a malware analysis environment to find out the inner mechanisms of malware.  The applications of malware analysis heavily side with security.  To find out how malware works is the key to protecting against it.  So let's get started!
 
-**Things you will need**
-- Hypervisor: The virtual machine environment runs on a hypervisor, and there are a few to choose from such as VMware, or a free open-source option called [VirtualBox](https://www.virtualbox.org/).
+## Things you will need
+- **Hypervisor**: The virtual machine environment runs on a hypervisor, and there are a few to choose from such as VMware or a free open-source option called [VirtualBox](https://www.virtualbox.org/).
