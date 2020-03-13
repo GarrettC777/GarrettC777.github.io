@@ -19,7 +19,13 @@ categories: jekyll update
 ![Alt](/photos/VirtualBox1.PNG "VirtualBox")
 <sub><sup><i>VirtualBox Import Prompt.</i></sup></sub>
 
-&nbsp;&nbsp;&nbsp;&nbsp; There are a few warnings you should look out for once it's been imported at least if you are using VirtualBox.  You will need to click on the settings tab of your newly imported virtual machine and hover over the *Invalid Settings Detected* warning at the bottom of the settings box.  You may find there are a number of problems you have to fix before powering on the machine.  You should see something similar to the image below.
+&nbsp;&nbsp;&nbsp;&nbsp; There are a few warnings you should look out for once it's been imported at least if you are using VirtualBox.  You will need to click on the settings tab of your newly imported virtual machine and hover over the *Invalid Settings Detected* warning at the bottom of the settings box.  You may find there are a number of problems you have to fix before moving on to the next step.  You should see something similar to the image below.
 
 ![Alt](/photos/VirtualBox2.PNG "VirtualBox Warning")
 <sub><sup><i>VirtualBox Warning.</i></sup></sub>
+
+### Take a snapshot of the Windows 10 VM
+&nbsp;&nbsp;&nbsp;&nbsp; Before you power up the VM, you'll want to take a snapshot, because once you power it on, Microsoft will start the VM's 90 day period and once exceeded, the VM will be expired and unusable.  Not only this, but if anything goes wrong and your environment is compromised by malware, you will have to revert to the clean snapshot anyway.  Once reverted, the 90 period will act as if it began again.
+
+![Alt](/photos/VirtualBox3.PNG "Snapshot")
+<sub><sup><i>VirtualBox Snapshot Creation.</i></sup></sub>
