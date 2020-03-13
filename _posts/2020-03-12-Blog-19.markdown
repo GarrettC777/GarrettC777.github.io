@@ -24,8 +24,18 @@ categories: jekyll update
 ![Alt](/photos/VirtualBox2.PNG "VirtualBox Warning")
 <sub><sup><i>VirtualBox Warning.</i></sup></sub>
 
-### Take a snapshot of the Windows 10 VM
+### Take A Snapshot Of The Windows 10 VM
 &nbsp;&nbsp;&nbsp;&nbsp; Before you power up the VM, you'll want to take a snapshot, because once you power it on, Microsoft will start the VM's 90 day period and once exceeded, the VM will be expired and unusable.  Not only this, but if anything goes wrong and your environment is compromised by malware, you will have to revert to the clean snapshot anyway.  Once reverted, the 90 period will act as if it began again.
 
 ![Alt](/photos/VirtualBox3.PNG "Snapshot")
 <br><sub><sup><i>VirtualBox Snapshot Creation.</i></sup></sub>
+
+### Add A Temporary Shared Folder
+&nbsp;&nbsp;&nbsp;&nbsp; Once you've completed the above task, you'll need to have a way of getting the Flare-VM Folder to your VM without internet and that can be accomplished with a shared folder setting in your VM configurations as you will see in the photo below.
+
+![Alt](/photos/VirtualBox4.PNG "Shared Folder")
+<sub><sup><i>VirtualBox Shared Folder Creation.</i></sup></sub>
+
+**Note**: you should change your network adapter to *bridged* for the instalation of Flare-Vm but once completed, you should changed it to **Host-Only** for security purposes.
+
+&nbsp;&nbsp;&nbsp;&nbsp; Now that you've got all of the warnings squared away, created a snapshot, created a shared folder, and configured the network configuration you're ready to power up!  Power up the Windows 10 VM and log in using the default password "Passw0rd!".
