@@ -36,6 +36,16 @@ categories: jekyll update
 ![Alt](/photos/VirtualBox4.PNG "Shared Folder")
 <sub><sup><i>VirtualBox Shared Folder Creation.</i></sup></sub>
 
-**Note**: you should change your network adapter to *bridged* for the instalation of Flare-Vm but once completed, you should changed it to **Host-Only** for security purposes.
+**Note**: you should change your network adapter to *bridged* for the instalation of Flare-VM but once completed, you should changed it to **Host-Only Adapter** for security purposes.
 
-&nbsp;&nbsp;&nbsp;&nbsp; Now that you've got all of the warnings squared away, created a snapshot, created a shared folder, and configured the network configuration you're ready to power up!  Power up the Windows 10 VM and log in using the default password "Passw0rd!".
+&nbsp;&nbsp;&nbsp;&nbsp; Now that you've got all of the warnings squared away, created a snapshot, created a shared folder, and configured the network configuration you're ready to power up!  Power up the Windows 10 VM and log in using the default password "Passw0rd!".  Go to your shared folder from your VM and extract the Flare-VM onto your desktop or wherever you feel comfortable.  Open up a powershell Window in **administrator mode**.  You're going to have to unrestrict the execution policy so that the flare-vm script can do it's job without being interrupted but restriction policies.  You can do this by typing the command below.
+```
+Set-ExecutionPolicy unrestricted
+```
+Type "y" and click enter.  Next, make sure you are in the Flare-VM folder to run the command below.
+```
+.\install.ps1
+```
+It will prompt you for a user password in which you will provide the default password.  Once this is done, you will have a great deal of malware and pentesting tools to work with to reverse engineer the malware of your choosing.  Don't forget to remove the shared folder in your settings and change your network configuration back to **Host-Only Adapter**.  
+
+**Note:** This can take a while to download and install all the packages it needs to complete the VM configuration.
