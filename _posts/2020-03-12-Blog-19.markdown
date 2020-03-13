@@ -28,4 +28,4 @@ categories: jekyll update
 &nbsp;&nbsp;&nbsp;&nbsp; Before you power up the VM, you'll want to take a snapshot, because once you power it on, Microsoft will start the VM's 90 day period and once exceeded, the VM will be expired and unusable.  Not only this, but if anything goes wrong and your environment is compromised by malware, you will have to revert to the clean snapshot anyway.  Once reverted, the 90 period will act as if it began again.
 
 ![Alt](/photos/VirtualBox3.PNG "Snapshot")
-<sub><sup><i>VirtualBox Snapshot Creation.</i></sup></sub>
+<br><sub><sup><i>VirtualBox Snapshot Creation.</i></sup></sub>
