@@ -4,7 +4,7 @@ title:  "Setting Up Your Malware Analysis Environment"
 date:   2020-03-12 12:59:34 -0700
 categories: jekyll update
 ---
-&nbsp;This week, I've been digging into malware analysis based on my curiousity for a piece of malware that caught my attention.  I wanted to run it, but I knew that I should take the propper precautions.  In this tutorial, I'm going to show you how to run a malware analysis environment to find out the inner mechanisms of malware.  The applications of malware analysis heavily side with security.  To find out how malware works is the key to protecting against it.  So let's get started!
+&nbsp;&nbsp;&nbsp;&nbsp; This week, I've been digging into malware analysis based on my curiousity for a piece of malware that caught my attention.  I wanted to run it, but I knew that I should take the propper precautions.  In this tutorial, I'm going to show you how to run a malware analysis environment to find out the inner mechanisms of malware.  The applications of malware analysis heavily side with security.  To find out how malware works is the key to protecting against it.  So let's get started!
 
 ### Things you will need
 - **Hypervisor**: The virtual machine environment runs on a hypervisor, and there are a few to choose from such as VMware or a free open-source option called [VirtualBox](https://www.virtualbox.org/).
@@ -14,7 +14,8 @@ categories: jekyll update
 **Note:** We'll be skipping installation instructions of the Hypervisor, but just know that I'll be using VirtualBox for this example.
 
 ### Installing The Windows 10 VM
-&nbsp; Now that VirtualBox or the Hypervisor of your choice is installed and ready to go, you need to unzip the Windows 10 Virtual Machine folder you've downloaded and extract the contents.  Once you've done that, click on the *MSEdge - Win10.ova* file inside.  You should be prompted by your hypervisor to import the VM to your Hypervisor Library.
+&nbsp;&nbsp;&nbsp;&nbsp; Now that VirtualBox or the Hypervisor of your choice is installed and ready to go, you need to unzip the Windows 10 Virtual Machine folder you've downloaded and extract the contents.  Once you've done that, click on the *MSEdge - Win10.ova* file inside.  You should be prompted by your hypervisor to import the VM to your Hypervisor Library.
 
 ![Alt](/photos/VirtualBox1.PNG "VirtualBox")
 <sub><sup><i>VirtualBox Import Prompt.</i></sup></sub>
+
