@@ -17,4 +17,4 @@ categories: jekyll update
 &nbsp; Now that VirtualBox or the Hypervisor of your choice is installed and ready to go, you need to unzip the Windows 10 Virtual Machine folder you've downloaded and extract the contents.  Once you've done that, click on the *MSEdge - Win10.ova* file inside.  You should be prompted by your hypervisor to import the VM to your Hypervisor Library.
 
 ![Alt](/photos/VirtualBox1.PNG "VirtualBox")
-<sub><sup>VirtualBox Import Prompt.</sup></sub>
+<sub><sup><i>VirtualBox Import Prompt.</i></sup></sub>
