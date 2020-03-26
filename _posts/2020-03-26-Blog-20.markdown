@@ -30,3 +30,4 @@ target     prot opt source               destination
 Chain OUTPUT (policy ACCEPT)
 target     prot opt source               destination
 ```
+If you do already have rules, you can flush them by issuing the flush flag: **iptables -F**.
