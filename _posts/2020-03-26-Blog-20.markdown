@@ -17,7 +17,7 @@ sudo apt-get install iptables
 ### Basic iptable Commands
 &nbsp;&nbsp;&nbsp;&nbsp; Once you've installed the iptables firewall, you can now look at your iptables list of rules, which should be blank.  You can do so with the iptables command with the flag "-L".
 ```
-iptables -L
+sudo iptables -L
 ```
 It should give you an output like this:
 ```
