@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Adding Rules To Your ipTables Firewall For Linux Machines"
+title:  "Adding Rules To Your iptables Firewall For Linux Machines"
 date:   2020-03-26 12:59:34 -0700
 categories: jekyll update
 ---
@@ -10,7 +10,23 @@ In this tutorial I'm going to give you the basics on how to create a simple set 
 
 ### Installing iptables
 
-If you don't have iptables installed already, you should install it now using the package manager of your distrobution.  In my case, I'm going to use The Advanced Package Tool based on personal choice.  If your OS is debian based like Ubuntu, you can use the command below.
+&nbsp;&nbsp;&nbsp;&nbsp; If you don't have iptables installed already, you should install it now using the package manager of your distrobution.  In my case, I'm going to use The Advanced Package Tool based on personal choice.  If your OS is debian based like Ubuntu, you can use the command below.
 ```
 sudo apt-get install iptables
+```
+Once you've installed the iptables firewall, you can now look at your iptables list of rules, which should be blank.  You can do so with the iptables command with the flag "-L".
+```
+iptables -L
+```
+It should give you an output like this:
+```
+Output:
+Chain INPUT (policy ACCEPT)
+target     prot opt source               destination         
+
+Chain FORWARD (policy ACCEPT)
+target     prot opt source               destination         
+
+Chain OUTPUT (policy ACCEPT)
+target     prot opt source               destination
 ```
