@@ -14,7 +14,8 @@ In this tutorial I'm going to give you the basics on how to create a simple set 
 ```
 sudo apt-get install iptables
 ```
-Once you've installed the iptables firewall, you can now look at your iptables list of rules, which should be blank.  You can do so with the iptables command with the flag "-L".
+### Basic iptable Commands
+&nbsp;&nbsp;&nbsp;&nbsp; Once you've installed the iptables firewall, you can now look at your iptables list of rules, which should be blank.  You can do so with the iptables command with the flag "-L".
 ```
 iptables -L
 ```
@@ -30,4 +31,31 @@ target     prot opt source               destination
 Chain OUTPUT (policy ACCEPT)
 target     prot opt source               destination
 ```
-If you do already have rules, you can flush them by issuing the flush flag: **iptables -F**.
+&nbsp;&nbsp;&nbsp;&nbsp; If you do already have rules, you can flush them by issuing the flush flag, **iptables -F**, but only if your default policy on your INPUT and OUTPUT chains are set to accept.  This is done if you are in an active remote connection with the server, but if you are physically logged in to the device, this does not pertain to you. This can be done by issuing the following commands.
+```
+sudo iptables -P INPUT ACCEPT
+sudo iptables -P OUTPUT ACCEPT
+```
+### Creating Your Rules
+&nbsp;&nbsp;&nbsp;&nbsp; Now we are set up to make our first rule.  I'm going to make a few rules based on the fact that I am serving a website and ssh daemon on the server.  This means I'll need ports 80, 443, and 22 to be open to incoming traffic.  My first rule will be as follows:
+```
+iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+```
+**Breakdown**
+- **iptables**: This is the command to issue to begin the adding of the rule.
+- **-A INPUT**: The A flag will append the rule to the end of the chain.
+- **-p tcp**: This shows that the allowed protocol is tcp.
+- **--dport 80**: This gives the requirement that the packet is meant for port 80, for the web server to handle.
+- **-j ACCEPT**: This specifies that through the criteria we've previously written, we will accept these types of packets.
+
+&nbsp;&nbsp;&nbsp;&nbsp; Now that we've completed our first rule, it's time to add the other two rules.
+
+```
+iptables -A INPUT -p tcp --dport 443 -j ACCEPT
+iptables -A INPUT -s 192.168.0.150 -p tcp --dport 22 -j ACCEPT
+```
+
+&nbsp;&nbsp;&nbsp;&nbsp; If you'll take a look at the second rule in that example, you can see I'm only allowing that ssh connection to come from a single private ip address within the subnet with the *-s* flag.
+
+This should help you get started with hardening your server security and there are other important rules you should add to further strengthen your server reliability.  Thank you for reading!
+
