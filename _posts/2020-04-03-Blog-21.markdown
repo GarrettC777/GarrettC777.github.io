@@ -1,0 +1,18 @@
+---
+layout: post
+title:  "Manually mounting a usb to linux via command-line"
+date:   2020-03-26 12:59:34 -0700
+categories: jekyll update
+---
+&nbsp;&nbsp;&nbsp;&nbsp; It's been quite a hectic week, and this post will be a short one.  Never the less, this may actually be something you may not know how to do.  This is one of those skills that is so simple that if you don't do it every day, you find yourself looking it up over and over again.  So let's dig right in.  We're going to be looking at how to mount a usb device to a linux computer via command-line.
+
+### Insert The USB and Locate it.
+You're going to run the following command:
+```
+sudo fdisk -l
+```
+*note: fdisk is a command line partition tool that allows you to create, edit, and mangage partitions on the drives.*
+
+Once you run the command, you will likely see a few different devices and partitions, but the one that you should focus on will most likely present itself as */dev/sdb1*.
+
+![Usb](/photos/usb.PNG "usb")
