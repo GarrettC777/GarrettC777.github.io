@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  "Manually mounting a usb to linux via command-line"
+title:  "Manually mounting a USB to linux via command-line"
 date:   2020-03-26 12:59:34 -0700
 categories: jekyll update
 ---
-&nbsp;&nbsp;&nbsp;&nbsp; It's been quite a hectic week, and this post will be a short one.  Never the less, this may actually be something you may not know how to do.  This is one of those skills that is so simple that if you don't do it every day, you find yourself looking it up over and over again.  So let's dig right in.  We're going to be looking at how to mount a usb device to a linux computer via command-line.
+&nbsp;&nbsp;&nbsp;&nbsp; It's been quite a hectic week, and this post will be a short one.  Never the less, this may actually be something you may not know how to do.  This is one of those skills that is so simple that if you don't do it every day, you find yourself looking it up over and over again.  So let's dig right in.  We're going to be looking at how to mount a USB device to a linux computer via command-line.
 
-### Insert The USB and Locate it.
+### Insert The USB and Locate it
 You're going to run the following command:
 ```
 sudo fdisk -l
@@ -15,4 +15,21 @@ sudo fdisk -l
 
 Once you run the command, you will likely see a few different devices and partitions, but the one that you should focus on will most likely present itself as */dev/sdb1*.
 
-![Usb](/photos/usb.PNG "usb")
+![USB](/photos/usb.PNG "USB")
+
+### Create the mounting point
+Now run the command below to create the directory you want to mount the USB to.
+```
+sudo mkdir /media/USB
+```
+### Mount the USB
+Now that you've created the mounting point, you can attach the usb to it with this command:
+```
+sudo mount /dev/sdb1 /media/usb
+```
+Once you're done using the device, you can safely unmount it with this command:
+```
+sudo umount /dev/sdb1
+```
+Thanks for reading.  Until next time!
+
