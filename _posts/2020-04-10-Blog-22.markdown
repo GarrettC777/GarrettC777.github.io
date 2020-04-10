@@ -1,0 +1,35 @@
+---
+layout: post
+title:  "Creating an EC2 Instance and Assigning it to a specified VPC via vpc_security_group_ids"
+date:   2020-03-26 12:59:34 -0700
+categories: jekyll update
+---
+&nbsp;&nbsp;&nbsp;&nbsp; With terraform, things are usually pretty straight forward; however, you will find that sometimes on the documentation pages, there's little warnings and notifications that will apply to your code at some point.  With new versions of terraform, you'll need to attach an EC2 differently to vpcs than previously done.  This is done using vpc_security_group_ids.
+
+### The Code
+```
+resource "aws_instance" "bastion" {
+  ami           = "ami-0d1cd67c26f5fca19"
+  instance_type = "t2.micro"
+  vpc_security_group_ids = ["${aws_security_group.allow_ssh.id}"]
+  subnet_id = "${aws_subnet.public-subnet.id}"
+  associate_public_ip_address = true
+
+  tags = {
+    Name = "Bastion Host"
+  }
+}
+```
+### The Breakdown
+&nbsp;&nbsp;&nbsp;&nbsp; First we need to call on the resource **"aws_instance"** and name it appropriately.  Mine will be named "bastion" as I am creating a bastion host for my VPC.  Next we have to declare the **ami** or Amazon Machine Image and I chose a ubuntu linux image, though there are many more you can choose from.  To find them, you can browse the AMI list when creating an EC2 on the console and they have AMI ID's by their name either in ARM or in x86 architecture.  The **instance type** will determine the kind of resources your computer can access such as RAM.  I went with the free teir t2.micro for the sake of it being free.  Next we need to attach the EC2 to a vpc of your specified choice via **vpc_security_group_ids**.  To do so, you need to create a vpc security group for that vpc.  Once you're done, even though it will not have an attribute for the id itself, you can assign the id with this line: 
+```
+vpc_security_group_ids = ["${aws_security_group.<sg_name_here>.id}"]
+```
+Next you'll need to specify the subnet you wish to attach the EC2 instance to.  You can do so with this line of code.
+```
+subnet_id = "${aws_subnet.<name-of-subnet>.id}"
+```
+
+The last two lines are optional, but if you want to assign a public ip to the ec2, you'll need to specify that **associate_public_ip_address = true**.
+
+This will effectively put the EC2 in the subnet and vpc of your choosing.  I hope this clarified a few things for you!
