@@ -9,3 +9,7 @@ categories: jekyll update
 A Remote Authentication Dial-In User Service (RADIUS) server is a central point of authentication.  When connecting to the VPN of the client's choice, the VPN forwards authentication related services to a RADIUS server and the RADIUS server will then most likely connect to an LDAP server to retrieve the user account information.  If the user is authentic, it will send the authentication information back to the VPN server and the client will be connected.  The image below is an architectural overview of what that would look like.
 
 ![VPN](/photos/VPNServices.PNG "VPN")
+
+The RADIUS server could hold user accounts on it's own central database, however it is easier and more common to let the RADIUS server have access to an LDAP server that holds accounts.  A Lightweight Directory Access Protocol (LDAP) Server is used to accessing and maintaining directory services over the IP network.
+
+Thank you for reading, I hope this provided you with some newfound knowledge.
