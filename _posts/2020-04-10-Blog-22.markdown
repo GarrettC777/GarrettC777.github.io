@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Creating an EC2 Instance and Assigning it to a specified VPC via vpc_security_group_ids"
-date:   2020-03-26 12:59:34 -0700
+date:   2020-04-10 12:59:34 -0700
 categories: jekyll update
 ---
 &nbsp;&nbsp;&nbsp;&nbsp; With terraform, things are usually pretty straight forward; however, you will find that sometimes on the documentation pages, there's little warnings and notifications that will apply to your code at some point.  With new versions of terraform, you'll need to attach an EC2 differently to vpcs than previously done.  This is done using vpc_security_group_ids.

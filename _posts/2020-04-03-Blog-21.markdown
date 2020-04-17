@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Manually mounting a USB to linux via command-line"
-date:   2020-03-26 12:59:34 -0700
+date:   2020-04-03 12:59:34 -0700
 categories: jekyll update
 ---
 &nbsp;&nbsp;&nbsp;&nbsp; It's been quite a hectic week, and this post will be a short one.  Never the less, this may actually be something you may not know how to do.  This is one of those skills that is so simple that if you don't do it every day, you find yourself looking it up over and over again.  So let's dig right in.  We're going to be looking at how to mount a USB device to a linux computer via command-line.
