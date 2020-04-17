@@ -10,6 +10,6 @@ A Remote Authentication Dial-In User Service (RADIUS) server is a central point 
 
 ![VPN](/photos/VPNServices.PNG "VPN")
 
-The RADIUS server could hold user accounts on it's own central database, however it is easier and more common to let the RADIUS server have access to an LDAP server that holds accounts.  A Lightweight Directory Access Protocol (LDAP) Server is used to accessing and maintaining directory services over the IP network.
+The RADIUS server could hold user accounts on it's own central database, however it is easier and more common to let the RADIUS server have access to an LDAP server that holds accounts.  A Lightweight Directory Access Protocol (LDAP) Server is used for accessing and maintaining directory services over the IP network.
 
 Thank you for reading, I hope this provided you with some newfound knowledge.
