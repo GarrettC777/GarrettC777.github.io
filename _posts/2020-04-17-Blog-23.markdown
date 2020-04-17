@@ -1,0 +1,11 @@
+---
+layout: post
+title:  "Using a RADIUS Server with a VPN Best Practices"
+date:   2020-03-26 12:59:34 -0700
+categories: jekyll update
+---
+&nbsp;&nbsp;&nbsp;&nbsp; In a corporate environment, the need to access the network from a location other than that physical network's location will most likely arise at some point.  For those instances, it is likely they'd use a VPN server.  A VPN server allows encrypted tunnel access to the physical network from the client's current location.  It get's complicated sometimes when a client would like to connect to multiple locations of the company.  What happens when that client changes their password while connected to a California location and then proceeds to log in to the New York network with their seperate VPN server.  The way this is possible, is through a RADIUS server.
+
+A Remote Authentication Dial-In User Service (RADIUS) server is a central point of authentication.  When connecting to the VPN of the client's choice, the VPN forwards authentication related services to a RADIUS server and the RADIUS server will then most likely connect to an LDAP server to retrieve the user account information.  If the user is authentic, it will send the authentication information back to the VPN server and the client will be connected.  The image below is an architectural overview of what that would look like.
+
+![VPN](/photos/VPNServices.PNG "VPN")
