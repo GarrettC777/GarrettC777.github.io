@@ -1,0 +1,44 @@
+---
+layout: post
+title:  "An Introduction to Saltstack"
+date:   2020-04-24 12:59:34 -0700
+categories: jekyll update
+---
+&nbsp;&nbsp;&nbsp;&nbsp; Saltstack is a server configuration orchestration tool to manage servers that is primarily used for administrative purposes as well as SecOps.  I heard about Saltstack a month back at a linux convention and discussed the differences between Saltstack and Ansible with a fellow attendee, because it is primarily used in the same way as Ansible.  They accomplish the same tasks, but not necesarily the same.  It's interesting to me, and I already love ansible so I'm glad to get into another tool.  I'm going to go over the basics on how to get started with saltstack so let's get into it!
+
+###Installation
+To get started, you'll need to install the required packages.  This includes the following:
+```
+apt-get install salt-api
+apt-get install salt-cloud
+apt-get install salt-master
+apt-get install salt-minion
+apt-get install salt-ssh
+apt-get install salt-syndic
+```
+Two important concepts I want to talk about that you're installing with these commands are **masters** and **minions**.
+
+- **Masters**: The master is a saltstack server that acts as a command center for the minions.  This is the server that issues out the commands.  This Master program goes on the computer you'd like to issue commands from.  
+
+-**Minions**: The minion can be thought of as a saltstack client that responds to the master commands.  You put the minion software on the servers you'd like to manage.
+
+**Side note:** The difference with Saltstack and Ansible in this process is that Ansible doesn't need any software installed on the servers you're going to be managing.
+
+###Running Salt
+To run the Salt instances in foreground you're going to activate the masters and minions seperately.
+```
+salt-master
+salt-minion
+```
+
+###Issuing your first command to your minion
+Now that we've got everything set up quickly with the very basics, you can issue commands to the minions you've created like so:
+```
+salt 'webserver' pkg.install nginx
+```
+**Anatomy**
+- **salt**: This is the salt command that must be issued to run a salt configuration change or command input.
+- **'webserver'**: This is the name of the minion that you're referring to, in this case a webserver on your network.
+- **pkg.install nginx**: This is the command you're issuing to that webserver, which in this case is installing the nginx package.
+
+It's important to note that while I just issued a single command to the webserver, you can more effectively and efficiently declare state files for your minions that will do multiple things at once the same way Ansible has configuration playbooks.  Thanks for reading, I hope you gained some insight to a new tool and I encourage you to try it yourself!
