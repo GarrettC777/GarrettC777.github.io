@@ -1,8 +1,18 @@
 ---
 layout: post
-title:  "Monitor Data from remote sources using Docker, Loki, and Grafana on a Single Board Computer"
+title:  "Monitor data from remote sources using Docker, Promtail, and Grafana Loki on a Single Board Computer"
 date:   2023-12-17 12:59:34 -0700
 categories: jekyll update
 ---
 
-&nbsp;&nbsp;&nbsp;&nbsp; There may come a time when you'd like to monitor your devices from a central console, whether it's because you are having trouble logging your various device's activities or you just want to mess around with your homelab and add to the mayhem.  In this little lab, we'll go through the steps it takes to get your central logging console up and running with a humble beginning of monitoring a single Windows instance of event logs.  Let's get started with defining what exactly 
+&nbsp;&nbsp;&nbsp;&nbsp; There may come a time when you'd like to monitor your devices from a central console, whether it's because you are having trouble logging your various device's activities or you just want to mess around with your homelab and add to the mayhem.  In this little lab, we'll go through the steps it takes to get your central logging console up and running with a humble beginning of monitoring a single Windows instance of event logs.  This lab is intended for usage on an SBC (Single Board Computer) such as a raspberry pi, or what I'll be using which is a Libre Computer Board.  The reason for this, is because this lab is aimed at people just getting into the world of homelabbing.  You definitely don't need to have an SBC to follow this tutorial, so if you're interested, feel free to follow along!  (For those that already have an OS installed, skip to step 2.)
+
+### Step 1: Loading the SBC with Armbian
+
+&nbsp;&nbsp;&nbsp;&nbsp; You may use whatever OS you're comfortable with, but I'm going to use Armbian.  For the Libre Computer Le Potato AML-S905X-CC model, you'll want to download the file [here](https://www.armbian.com/lepotato/) and use the Armbian Bookworm CLI version as shown below:
+
+![Alt](/photos/ArmbianDownload.png "ArmbianDownload")
+
+Download the [Belany Etcher](https://etcher.balena.io/) imaging software and open it up.  Take your SD Card of choice, plug it in your computer and select the Armbian image you just recently downloaded to install onto the SD card.  This will create a bootable Armbian OS which you'll use as your bootdrive in the Libre Computer.
+
+![Alt](/photos/FlashingArmbian.png "FlashingArmbian")
