@@ -13,6 +13,10 @@ categories: jekyll update
 
 ![Alt](/photos/ArmbianDownload.png "ArmbianDownload")
 
-Download the [Belany Etcher](https://etcher.balena.io/) imaging software and open it up.  Take your SD Card of choice, plug it in your computer and select the Armbian image you just recently downloaded to install onto the SD card.  This will create a bootable Armbian OS which you'll use as your bootdrive in the Libre Computer.
+Download the [Balena Etcher](https://etcher.balena.io/) imaging software to your desktop and open it up.  Take your Micro-SD Card of choice, plug it in your computer and select the Armbian image you just recently downloaded to install onto the SD card.  This will create a bootable Armbian OS which you'll use as your bootdrive in the Libre SBC.
 
 ![Alt](/photos/FlashingArmbian.png "FlashingArmbian")
+
+Once Etcher has completed your OS installation, remove the Micro-SD card from your desktop and plug it into the Libre SBC.  Make sure you connect ethernet and keyboard.  Last but not least, plug the power cable in and it should fire right up.  On your Desktop, open up your SSH Console of choice, whether it be the good ol' command prompt, Putty, or what I'll be using which is Termius.  To get the IP address that's been assigned to your new SBC, log into your router (usually 198.168.0.1 or 198.168.1.1 depending on your brand) and check your DHCP leases.  It should have a hostname listed as "lepotato".  Once you've found your IP address, plug that IP address in to your SSH terminal and log in as root.  The default Armbian password is **1234**.  You'll be prompted to change that password on your first login.
+
+Refer to the Armbian user guide at the ["How to login?"](https://docs.armbian.com/User-Guide_Getting-Started/#how-to-login) section for a walk-through on how to get logged in for the firs time.  If you end up choosing ZSH as your default shell like I did, you'll want to log out and log back in (as the other user you created during setup).
