@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Installing the Raspberry Pi PiHole"
+title:  "Monitor Data from remote sources using Docker, Loki, and Grafana on a Single Board Computer"
 date:   2023-12-17 12:59:34 -0700
 categories: jekyll update
 ---
 
-&nbsp;&nbsp;&nbsp;&nbsp; Yup
+&nbsp;&nbsp;&nbsp;&nbsp; There may come a time when you'd like to monitor your devices from a central console, whether it's because you are having trouble logging your various device's activities or you just want to mess around with your homelab and add to the mayhem.  In this little lab, we'll go through the steps it takes to get your central logging console up and running with a humble beginning of monitoring a single Windows instance of event logs.  Let's get started with defining what exactly 
