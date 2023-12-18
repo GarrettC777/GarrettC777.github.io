@@ -1,0 +1,8 @@
+---
+layout: post
+title:  "Installing the Raspberry Pi PiHole"
+date:   2023-12-17 12:59:34 -0700
+categories: jekyll update
+---
+
+&nbsp;&nbsp;&nbsp;&nbsp; Yup
